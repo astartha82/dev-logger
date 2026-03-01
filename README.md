@@ -40,11 +40,6 @@ PHP 7.4 or higher
 ```php
 devlog( $log, $level = 'debug', $logfile = false );
 ```
-Log just a line of text:
-```
-_log('Just log this line of text');
-```
-Log multiple variables at once:
 Parameters:
 
 • $log (mixed)
