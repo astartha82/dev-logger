@@ -1,101 +1,86 @@
-# Dev Logger
+# Astartha Dev Logger
 
-Dev Logger is a lightweight WordPress debugging plugin that provides structured, readable logs directly inside WordPress admin.
+Astartha Dev Logger is a lightweight developer-friendly logging and debugging plugin for WordPress. It provides structured, readable logs stored in files and a convenient viewer inside the WordPress admin.
 
-It is designed for developers who want fast, safe, and convenient debugging without relying on server access or raw error_log files.
+It is designed for developers who want fast, safe, and flexible debugging without relying on server access or raw `error_log` files.
 
-Allows quick and flexible logging to `.log` files inside the `wp-content/uploads/devlog-logs/` with convenient preview directly in WordPress admin.
+Logs are stored in:
 
-Features:
+`wp-content/uploads/devlog-logs/`
 
-• structured log output
-• readable formatting for arrays and objects
-• safe admin-only visibility in WordPress admin panel
-• minimal configuration
-• minimal performance impact
-
-Log files are stored inside the WordPress uploads directory and intended for developer use.
-Access is restricted through WordPress admin interface.
+and can be viewed, downloaded, and managed directly from the WordPress admin.
 
 ---
 
-## Requirements
+## Basic Usage
 
-WordPress 5.0 or higher  
-PHP 7.4 or higher
-
-
----
-
-## Installation
-
-1. Upload the plugin to /wp-content/plugins/dev-logger/
-2. Activate the plugin through the WordPress admin
-3. Use devlog() function in your code
-
----
-
-## General usage
+General function signature:
 
 ```php
 devlog( $log, $level = 'debug', $logfile = false );
 ```
-Parameters:
 
-• $log (mixed)
-Data to log. Can be string, array, object, or any variable.
+### Parameters
 
-• $level (string, optional)
-Log severity level. Allowed values:
-'debug', 'info', 'warning', 'error', 'critical'
-Default: 'debug'
+**`$log` (mixed)**  
+Variable or message to log.
 
-• $logfile (string|false, optional)
-Custom logfile name without extension.
-If false, the default logfile is used.
+**`$level` (string, optional)**  
+Log severity level. Allowed values: `debug`, `info`, `warning`, `error`, `critical`.  
+Default: `debug`.
 
-Log a variable :
+**`$logfile` (string|false, optional)**  
+Custom log file name without extension.  
+If `false`, the default logfile is used.
+
+---
+
+## Examples
+
+Log any variable:
+
 ```php
-devlog($myvar);
+devlog( $myVar );
 ```
 
-Log just a line of text:
-```php
-devlog('Just a line of text');
-```
+Example output:
 
-Log into a custom file:
-```php
-$logfile = 'another-file';
-devlog($myvar, 'info', $logfile);
+```text
+[14:32:10] [DEBUG] my-plugin.php:42 | $myVar: some value
 ```
-
-This will create a file like:
-`wp-content/uploads/devlog-logs/devlog_another-file_2024-02-06.log`
 
 Log with severity level:
+
 ```php
-devlog('Database connection failed', 'error');
+devlog( $order_id, 'error' );
+```
+
+Log plain message:
+
+```php
+devlog( 'Payment gateway unreachable' );
+```
+
+Log to custom file:
+
+```php
+devlog( $order_id, 'error', 'payments' );
+```
+
+Creates file:
+
+```text
+wp-content/uploads/devlog-logs/devlog_payments_2024-02-06.log
 ```
 
 ---
 
-## Options
-
-You can configure the directory and filename prefix using plugin settings or filters:
-
-Log directory: devlog-logs (default)
-
-File prefix: devlog (default)
-
-Auto-delete logs older than 30 days (default)
-
 ## Author
 
-Developed by Lilith Zakharyan
+Lilith Zakharyan  
 https://github.com/astartha82
 
 ## License
 
-This plugin is open-source and distributed under the terms of the [GNU General Public License v2.0](LICENSE.txt).
-
+GPL v2 or later  
+https://www.gnu.org/licenses/gpl-2.0.html

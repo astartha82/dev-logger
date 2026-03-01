@@ -12,8 +12,8 @@ class DevLog_Viewer {
 
 	public static function add_page() {
 		add_options_page(
-			__( 'Dev Logger — View Logs', 'dev-logger' ),
-			__( 'View Logs', 'dev-logger' ),
+			__( 'Astartha Dev Logger — View Logs', 'astartha-dev-logger' ),
+			__( 'View Logs', 'astartha-dev-logger' ),
 			'manage_options',
 			'devlog_viewer',
 			array( __CLASS__, 'render' )
@@ -36,7 +36,7 @@ class DevLog_Viewer {
 
 		if ( $action === 'delete' && isset( $_GET['_wpnonce'], $_GET['file'] ) ) {
 			if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'devlog_delete_file' ) ) {
-				wp_die( esc_html__( 'Security check failed.', 'dev-logger' ) );
+				wp_die( esc_html__( 'Security check failed.', 'astartha-dev-logger' ) );
 			}
 			$file = self::resolve_file( sanitize_file_name( wp_unslash( $_GET['file'] ) ) );
 			if ( $file && file_exists( $file ) ) {
@@ -48,7 +48,7 @@ class DevLog_Viewer {
 
 		if ( $action === 'download' && isset( $_GET['_wpnonce'], $_GET['file'] ) ) {
 			if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'devlog_download_file' ) ) {
-				wp_die( esc_html__( 'Security check failed.', 'dev-logger' ) );
+				wp_die( esc_html__( 'Security check failed.', 'astartha-dev-logger' ) );
 			}
 			$file = self::resolve_file( sanitize_file_name( wp_unslash( $_GET['file'] ) ) );
 			if ( $file && file_exists( $file ) ) {
@@ -93,7 +93,7 @@ class DevLog_Viewer {
 	 */
 	public static function render() {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'Not allowed.', 'dev-logger' ) );
+			wp_die( esc_html__( 'Not allowed.', 'astartha-dev-logger' ) );
 		}
 
 		$dir   = self::get_log_dir();
@@ -129,29 +129,29 @@ class DevLog_Viewer {
 		?>
 		<div class="wrap">
 			<h1>
-				<?php esc_html_e( 'Dev Logger — Logs', 'dev-logger' ); ?>
+				<?php esc_html_e( 'Astartha Dev Logger — Logs', 'astartha-dev-logger' ); ?>
 				<form method="post" style="display:inline; margin-left:12px;">
 					<?php wp_nonce_field( 'devlog_delete_all_logs' ); ?>
 					<input type="hidden" name="devlog_action" value="delete_all_logs">
 					<button type="submit" class="page-title-action" style="color:#b32d2e; border-color:#b32d2e;"
-						onclick="return confirm('<?php esc_attr_e( 'Delete ALL log files? This cannot be undone.', 'dev-logger' ); ?>')">
-						<?php esc_html_e( 'Delete All Logs', 'dev-logger' ); ?>
+						onclick="return confirm('<?php esc_attr_e( 'Delete ALL log files? This cannot be undone.', 'astartha-dev-logger' ); ?>')">
+						<?php esc_html_e( 'Delete All Logs', 'astartha-dev-logger' ); ?>
 					</button>
 				</form>
 			</h1>
 
 			<?php if ( 'deleted' === $devlog_msg ) : ?>
 				<div class="notice notice-success is-dismissible">
-					<p><?php esc_html_e( 'Log file deleted.', 'dev-logger' ); ?></p>
+					<p><?php esc_html_e( 'Log file deleted.', 'astartha-dev-logger' ); ?></p>
 				</div>
 			<?php elseif ( 'all_deleted' === $devlog_msg ) : ?>
 				<div class="notice notice-success is-dismissible">
-					<p><?php esc_html_e( 'All log files deleted.', 'dev-logger' ); ?></p>
+					<p><?php esc_html_e( 'All log files deleted.', 'astartha-dev-logger' ); ?></p>
 				</div>
 			<?php endif; ?>
 
 			<?php if ( empty( $files ) ) : ?>
-				<p><?php esc_html_e( 'No log files found. Logs will appear here once devlog() is called.', 'dev-logger' ); ?></p>
+				<p><?php esc_html_e( 'No log files found. Logs will appear here once devlog() is called.', 'astartha-dev-logger' ); ?></p>
 			<?php else : ?>
 
 			<div id="devlog-viewer">
@@ -183,20 +183,20 @@ class DevLog_Viewer {
 								add_query_arg( array( 'devlog_action' => 'download', 'file' => $current_filename ), $base_url ),
 								'devlog_download_file'
 							) ); ?>" class="button button-small">
-								<?php esc_html_e( 'Download', 'dev-logger' ); ?>
+								<?php esc_html_e( 'Download', 'astartha-dev-logger' ); ?>
 							</a>
 							<a href="<?php echo esc_url( wp_nonce_url(
 								add_query_arg( array( 'devlog_action' => 'delete', 'file' => $current_filename ), $base_url ),
 								'devlog_delete_file'
 							) ); ?>" class="button button-small button-link-delete"
-							   onclick="return confirm('<?php esc_attr_e( 'Delete this log file? This cannot be undone.', 'dev-logger' ); ?>')">
-								<?php esc_html_e( 'Delete', 'dev-logger' ); ?>
+							   onclick="return confirm('<?php esc_attr_e( 'Delete this log file? This cannot be undone.', 'astartha-dev-logger' ); ?>')">
+								<?php esc_html_e( 'Delete', 'astartha-dev-logger' ); ?>
 							</a>
 						</span>
 					</div>
 					<pre id="devlog-log-output"><?php echo wp_kses( self::colorize( $current_content ), array( 'span' => array( 'class' => true ) ) ); ?></pre>
 					<?php else : ?>
-					<p><?php esc_html_e( 'Select a file to view its contents.', 'dev-logger' ); ?></p>
+					<p><?php esc_html_e( 'Select a file to view its contents.', 'astartha-dev-logger' ); ?></p>
 					<?php endif; ?>
 				</div>
 

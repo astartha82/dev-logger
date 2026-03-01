@@ -2,9 +2,9 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Dev Logger\n"
-"POT-Creation-Date: 2026-03-02 00:14+0400\n"
-"PO-Revision-Date: 2026-03-02 00:14+0400\n"
+"Project-Id-Version: Astartha Dev Logger\n"
+"POT-Creation-Date: 2026-03-02 01:44+0400\n"
+"PO-Revision-Date: 2026-03-02 01:44+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: dev-logger.php:205
-msgid "Dev Logger — Settings"
+msgid "Astartha Dev Logger — Settings"
 msgstr ""
 
 #: dev-logger.php:208
@@ -90,7 +90,7 @@ msgid "This creates a file like:"
 msgstr ""
 
 #: includes/class-devlog-viewer.php:15
-msgid "Dev Logger — View Logs"
+msgid "Astartha Dev Logger — View Logs"
 msgstr ""
 
 #: includes/class-devlog-viewer.php:16
@@ -106,7 +106,7 @@ msgid "Not allowed."
 msgstr ""
 
 #: includes/class-devlog-viewer.php:132
-msgid "Dev Logger — Logs"
+msgid "Astartha Dev Logger — Logs"
 msgstr ""
 
 #: includes/class-devlog-viewer.php:137
@@ -146,11 +146,11 @@ msgid "Select a file to view its contents."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "Dev Logger"
+msgid "Astartha Dev Logger"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://github.com/astartha82/dev-logger"
+msgid "https://github.com/astartha82/astartha-dev-logger"
 msgstr ""
 
 #. Description of the plugin/theme

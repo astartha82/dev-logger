@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: Dev Logger
- * Plugin URI:  https://github.com/astartha82/dev-logger
+ * Plugin Name: Astartha Dev Logger
+ * Plugin URI:  https://github.com/astartha82/astartha-dev-logger
  * Description: A lightweight developer-friendly logger for WordPress. Log variables, objects, arrays and messages to .log files.
  * Author:      Lilith Zakharyan
  * Author URI:  https://github.com/astartha82
  * Version:     2.0.0
  * Requires at least: 5.0
  * Requires PHP: 7.4
- * Text Domain: dev-logger
+ * Text Domain: astartha-dev-logger
  * Domain Path: /languages
  * License:     GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -183,8 +183,8 @@ function devlog_options_init() {
 
 function devlog_options_page() {
 	add_options_page(
-		'Dev Logger Options',
-		'Dev Logger Options',
+		'Astartha Dev Logger Options',
+		'Astartha Dev Logger Options',
 		'manage_options',
 		'devlog_options',
 		'devlog_render_options'
@@ -202,32 +202,32 @@ function devlog_render_options() {
 	$file      = ! empty( $options['devlog_file'] )      ? $options['devlog_file']      : 'devlog';
 	$retention = isset( $options['devlog_retention'] ) ? (int) $options['devlog_retention'] : 30;
 ?>
-						<h1><?php esc_html_e( 'Dev Logger — Settings', 'dev-logger' ); ?></h1>
+						<h1><?php esc_html_e( 'Astartha Dev Logger — Settings', 'astartha-dev-logger' ); ?></h1>
 						<table class="form-table">
 								<tr valign="top">
-										<th scope="row"><?php esc_html_e( 'Log directory', 'dev-logger' ); ?></th>
+										<th scope="row"><?php esc_html_e( 'Log directory', 'astartha-dev-logger' ); ?></th>
 										<td>
 											<input type="text" id="devlog_dir" name="devlog_options[devlog_dir]" value="<?php echo esc_attr( $dir ); ?>" style="width:260px;">
-											<p class="description"><?php esc_html_e( 'Folder name inside wp-content/uploads/', 'dev-logger' ); ?></p>
+											<p class="description"><?php esc_html_e( 'Folder name inside wp-content/uploads/', 'astartha-dev-logger' ); ?></p>
 										</td>
 								</tr>
 								<tr valign="top">
-										<th scope="row"><?php esc_html_e( 'File prefix', 'dev-logger' ); ?></th>
+										<th scope="row"><?php esc_html_e( 'File prefix', 'astartha-dev-logger' ); ?></th>
 										<td>
 											<input type="text" id="devlog_file" name="devlog_options[devlog_file]" value="<?php echo esc_attr( $file ); ?>" style="width:260px;">
-											<p class="description"><?php esc_html_e( 'Log files will be named like: prefix_2024-01-31.log', 'dev-logger' ); ?></p>
+											<p class="description"><?php esc_html_e( 'Log files will be named like: prefix_2024-01-31.log', 'astartha-dev-logger' ); ?></p>
 										</td>
 								</tr>
 								<tr valign="top">
-										<th scope="row"><?php esc_html_e( 'Auto-delete logs older than', 'dev-logger' ); ?></th>
+										<th scope="row"><?php esc_html_e( 'Auto-delete logs older than', 'astartha-dev-logger' ); ?></th>
 										<td>
-											<input type="number" id="devlog_retention" name="devlog_options[devlog_retention]" value="<?php echo esc_attr( $retention ); ?>" min="0" style="width:80px;"> <?php esc_html_e( 'days', 'dev-logger' ); ?>
-											<p class="description"><?php esc_html_e( 'Set to 0 to disable automatic cleanup. Runs once daily via WP Cron.', 'dev-logger' ); ?></p>
+											<input type="number" id="devlog_retention" name="devlog_options[devlog_retention]" value="<?php echo esc_attr( $retention ); ?>" min="0" style="width:80px;"> <?php esc_html_e( 'days', 'astartha-dev-logger' ); ?>
+											<p class="description"><?php esc_html_e( 'Set to 0 to disable automatic cleanup. Runs once daily via WP Cron.', 'astartha-dev-logger' ); ?></p>
 										</td>
 								</tr>
 						</table>
 						<p class="submit">
-								<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'dev-logger' ); ?>" />
+								<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'astartha-dev-logger' ); ?>" />
 						</p>
 				</form>
 		</div>
@@ -235,19 +235,19 @@ function devlog_render_options() {
 		code {display: block; margin: 4px 0;}
 </style>
 
-<h2><?php esc_html_e( 'Usage', 'dev-logger' ); ?></h2>
+<h2><?php esc_html_e( 'Usage', 'astartha-dev-logger' ); ?></h2>
 
 <p class="description">
-<?php esc_html_e( 'Just pass any variable — the name, file, and line are captured automatically:', 'dev-logger' ); ?>
+<?php esc_html_e( 'Just pass any variable — the name, file, and line are captured automatically:', 'astartha-dev-logger' ); ?>
 <code>devlog( $myVar );</code>
-<?php esc_html_e( 'Output in log file:', 'dev-logger' ); ?>
+<?php esc_html_e( 'Output in log file:', 'astartha-dev-logger' ); ?>
 <code>[14:32:10] [DEBUG] my-plugin.php:42 | $myVar: some value</code>
 </p>
 
 <p class="description">
-<?php esc_html_e( 'Log with a specific level:', 'dev-logger' ); ?>
+<?php esc_html_e( 'Log with a specific level:', 'astartha-dev-logger' ); ?>
 <code>devlog( $order_id, 'error' );</code>
-<?php esc_html_e( 'Or use a shorthand helper:', 'dev-logger' ); ?>
+<?php esc_html_e( 'Or use a shorthand helper:', 'astartha-dev-logger' ); ?>
 <code>devlog_debug( $response );
 devlog_info( $user_id );
 devlog_warning( $query );
@@ -256,15 +256,15 @@ devlog_critical( $exception );</code>
 </p>
 
 <p class="description">
-<?php esc_html_e( 'Log a plain string message:', 'dev-logger' ); ?>
+<?php esc_html_e( 'Log a plain string message:', 'astartha-dev-logger' ); ?>
 <code>devlog( 'Payment gateway unreachable' );</code>
 </p>
 
 <p class="description">
-<?php esc_html_e( 'Log to a separate file (3rd argument):', 'dev-logger' ); ?>
+<?php esc_html_e( 'Log to a separate file (3rd argument):', 'astartha-dev-logger' ); ?>
 <code>devlog( $order_id, 'error', 'payments' );
 devlog_error( $order_id, 'payments' );</code>
-<?php esc_html_e( 'This creates a file like:', 'dev-logger' ); ?>
+<?php esc_html_e( 'This creates a file like:', 'astartha-dev-logger' ); ?>
 <code>wp-content/uploads/<?php echo esc_html( $options['devlog_dir'] ); ?>/<?php echo esc_html( $options['devlog_file'] ); ?>_payments_<?php echo esc_html( current_time( 'Y-m-d' ) ); ?>.log</code>
 </p>
 <?php

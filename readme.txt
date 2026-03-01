@@ -1,4 +1,4 @@
-=== Dev Logger ===
+=== Astartha Dev Logger ===
 Contributors: astartha82
 Tags: logger, debug, logging, developer, log
 Requires at least: 5.0
@@ -12,7 +12,7 @@ A lightweight developer-friendly logger for WordPress. One function call logs an
 
 == Description ==
 
-Dev Logger gives developers a fast and flexible way to log any data to `.log` files stored inside `wp-content/uploads/`.
+Astartha Dev Logger gives developers a fast and flexible way to log any data to `.log` files stored inside `wp-content/uploads/`.
 
 No configuration required — just call `devlog( $myVar )` anywhere in your theme or plugin code.
 
@@ -57,17 +57,17 @@ Log to a separate file (3rd argument):
 
 == Installation ==
 
-1. Upload the `dev-logger` folder to the `/wp-content/plugins/` directory.
+1. Upload the `astartha-dev-logger` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the **Plugins** menu in WordPress.
-3. Go to **Settings → Dev Logger** to configure the directory, file prefix, and auto-cleanup retention.
+3. Go to **Settings → Astartha Dev Logger** to configure the directory, file prefix, and auto-cleanup retention.
 4. Use `devlog()` anywhere in your theme or plugin code.
-5. View logs at **Settings → Dev Logger → View Logs**.
+5. View logs at **Settings → Astartha Dev Logger → View Logs**.
 
 == Frequently Asked Questions ==
 
 = Where are the log files stored? =
 
-By default in `wp-content/uploads/devlog-logs/`. You can change the directory name in **Settings → Dev Logger**.
+By default in `wp-content/uploads/devlog-logs/`. You can change the directory name in **Settings → Astartha Dev Logger**.
 
 = Can I log to separate files? =
 
@@ -78,7 +78,7 @@ This creates a file like `devlog_my-file_2024-02-06.log`.
 
 = Can I view log files in the admin? =
 
-Yes. Go to **Settings → Dev Logger → View Logs**. You can browse all log files, view their color-coded content, download them, or delete individual files.
+Yes. Go to **Settings → Astartha Dev Logger → View Logs**. You can browse all log files, view their color-coded content, download them, or delete individual files.
 
 = How does auto-cleanup work? =
 
