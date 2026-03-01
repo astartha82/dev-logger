@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Dev Logger
- * Plugin URI:  https://github.com/astartha82/simple-wp-logger
+ * Plugin URI:  https://github.com/astartha82/dev-logger
  * Description: A lightweight developer-friendly logger for WordPress. Log variables, objects, arrays and messages to .log files.
  * Author:      Lilith Zakharyan
  * Author URI:  https://github.com/astartha82
