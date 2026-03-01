@@ -1,0 +1,168 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Dev Logger\n"
+"POT-Creation-Date: 2026-03-02 00:14+0400\n"
+"PO-Revision-Date: 2026-03-02 00:14+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: dev-logger.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: dev-logger.php:205
+msgid "Dev Logger — Settings"
+msgstr ""
+
+#: dev-logger.php:208
+msgid "Log directory"
+msgstr ""
+
+#: dev-logger.php:211
+msgid "Folder name inside wp-content/uploads/"
+msgstr ""
+
+#: dev-logger.php:215
+msgid "File prefix"
+msgstr ""
+
+#: dev-logger.php:218
+msgid "Log files will be named like: prefix_2024-01-31.log"
+msgstr ""
+
+#: dev-logger.php:222
+msgid "Auto-delete logs older than"
+msgstr ""
+
+#: dev-logger.php:224
+msgid "days"
+msgstr ""
+
+#: dev-logger.php:225
+msgid "Set to 0 to disable automatic cleanup. Runs once daily via WP Cron."
+msgstr ""
+
+#: dev-logger.php:230
+msgid "Save Changes"
+msgstr ""
+
+#: dev-logger.php:238
+msgid "Usage"
+msgstr ""
+
+#: dev-logger.php:241
+msgid ""
+"Just pass any variable — the name, file, and line are captured automatically:"
+msgstr ""
+
+#: dev-logger.php:243
+msgid "Output in log file:"
+msgstr ""
+
+#: dev-logger.php:248
+msgid "Log with a specific level:"
+msgstr ""
+
+#: dev-logger.php:250
+msgid "Or use a shorthand helper:"
+msgstr ""
+
+#: dev-logger.php:259
+msgid "Log a plain string message:"
+msgstr ""
+
+#: dev-logger.php:264
+msgid "Log to a separate file (3rd argument):"
+msgstr ""
+
+#: dev-logger.php:267
+msgid "This creates a file like:"
+msgstr ""
+
+#: includes/class-devlog-viewer.php:15
+msgid "Dev Logger — View Logs"
+msgstr ""
+
+#: includes/class-devlog-viewer.php:16
+msgid "View Logs"
+msgstr ""
+
+#: includes/class-devlog-viewer.php:39 includes/class-devlog-viewer.php:51
+msgid "Security check failed."
+msgstr ""
+
+#: includes/class-devlog-viewer.php:96
+msgid "Not allowed."
+msgstr ""
+
+#: includes/class-devlog-viewer.php:132
+msgid "Dev Logger — Logs"
+msgstr ""
+
+#: includes/class-devlog-viewer.php:137
+msgid "Delete ALL log files? This cannot be undone."
+msgstr ""
+
+#: includes/class-devlog-viewer.php:138
+msgid "Delete All Logs"
+msgstr ""
+
+#: includes/class-devlog-viewer.php:145
+msgid "Log file deleted."
+msgstr ""
+
+#: includes/class-devlog-viewer.php:149
+msgid "All log files deleted."
+msgstr ""
+
+#: includes/class-devlog-viewer.php:154
+msgid "No log files found. Logs will appear here once devlog() is called."
+msgstr ""
+
+#: includes/class-devlog-viewer.php:186
+msgid "Download"
+msgstr ""
+
+#: includes/class-devlog-viewer.php:192
+msgid "Delete this log file? This cannot be undone."
+msgstr ""
+
+#: includes/class-devlog-viewer.php:193
+msgid "Delete"
+msgstr ""
+
+#: includes/class-devlog-viewer.php:199
+msgid "Select a file to view its contents."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Dev Logger"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/astartha82/dev-logger"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A lightweight developer-friendly logger for WordPress. Log variables, "
+"objects, arrays and messages to .log files."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Lilith Zakharyan"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/astartha82"
+msgstr ""
